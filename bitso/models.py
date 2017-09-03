@@ -269,7 +269,7 @@ class WithdrawalFees(BaseModel):
 
     def __init__(self, **kwargs):
         self.currencies = []
-        for currency,fee in kwargs.iteritems():
+        for currency,fee in kwargs.items():
             self.currencies.append(currency)
             setattr(self, currency, Decimal(fee))
 
