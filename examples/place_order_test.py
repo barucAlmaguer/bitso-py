@@ -17,11 +17,37 @@ def bitso_status():
 	print("Daily limit=		{}".format(status.daily_limit))
 	print("Daily remaining=	{}".format(status.daily_remaining))
 
-def sell_btc(amount, price):
-	order = api.place_order(book='btc_mxn', side='sell', order_type='limit', major=amount, price=price)
+def place_order_btc(side, amount, price):
+	print("Colocando orden de venta de bitcoins...")
+	order = api.place_order(book='btc_mxn', side=side, order_type='limit', major=amount, price=price)
+	print("Orden colocada")
 
-bitso_status()
-print("Colocando orden de venta de bitcoins...")
-sell_btc(amount='0.00104165', price='90000.00')
-print("Orden colocada")
-bitso_status()
+def view_orders():
+	oo = api.open_orders('btc_mxn')
+	if len(oo) > 0:
+		for o in oo:
+			print("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.")
+			print("Order #:  {}".format(o.oid))
+			print("\tSide=   {}".format(o.side))
+			print("\tAmount= BTC${}".format(o.original_amount))
+			print("\tPrice=  MXN${}".format(o.price))
+		print("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.")
+	else:
+		print("No current orders")
+
+def cancel_order(oid):
+	return api.cancel_order(oid)
+		
+def cancel_all_orders():
+	oo = api.open_orders('btc_mxn')
+	if len(oo) > 0:
+		for o in oo:
+			success = cancel_order(o.oid)
+			if success:
+				print("Order #{} cancelled".format(o.oid))
+			else:
+				print("Error cancelling order #{}".format(o.oid))
+	else:
+		print("No orders to cancel")
+	
+#place_order_btc(side='sell', amount='0.00104165', price='90000.00')
