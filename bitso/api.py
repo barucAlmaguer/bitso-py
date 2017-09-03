@@ -521,11 +521,11 @@ class Api(object):
         parameters['type'] = kwargs.get('order_type')
         parameters['side'] = kwargs.get('side')
         if 'major' in kwargs:
-            parameters['major'] = str(kwargs['major']).encode('utf-8')
+            parameters['major'] = str(kwargs['major']).encode('utf-8').decode('utf8')
         if 'minor' in kwargs:
-            parameters['minor'] = str(kwargs['minor']).encode('utf-8')
+            parameters['minor'] = str(kwargs['minor']).encode('utf-8').decode('utf8')
         if 'price' in kwargs:
-            parameters['price'] = str(kwargs['price']).encode('utf-8')
+            parameters['price'] = str(kwargs['price']).encode('utf-8').decode('utf8')
 
         resp = self._request_url(url, 'POST', params=parameters, private=True)
         return resp['payload']
