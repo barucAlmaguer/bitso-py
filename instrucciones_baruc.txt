@@ -4,10 +4,13 @@
 2. 	Generar API_KEY en https://bitso.com/api_setup
 
 3. 	Crear archivo btc_apikeys.py en carpeta de programas de ejemplo (O donde se requiera) e incluir la llave generada en la forma:
-	API_KEY= "abcdefghij"
-	API_SECRET="abc123def456g7h8ij9k0lmn1op2qr2s"
+		API_KEY= "abcdefghij"
+		API_SECRET="abc123def456g7h8ij9k0lmn1op2qr2s"
 
-4.	Incluir import .btc_apikeys a archivos que requieran acceso a info personal de bitso.
-4.	Incluir API_KEY y API_SECRET en las llamadas a bitso.Api(API_KEY, API_SECRET) correspondientes
+4.	Incluir 
+		from btc_apikeys import * 
+	a archivos que requieran acceso a info personal de bitso.
 
-5. 	have fun
+5.	Incluir API_KEY y API_SECRET en las llamadas a bitso.Api(API_KEY, API_SECRET) correspondientes
+
+6. 	have fun
