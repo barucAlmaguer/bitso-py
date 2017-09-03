@@ -3,7 +3,7 @@
 
 2. 	Generar API_KEY en https://bitso.com/api_setup
 
-3. 	Crear archivo btc_apikeys.py e incluir la llave generada en la forma:
+3. 	Crear archivo btc_apikeys.py en el root del proyecto e incluir la llave generada en la forma:
 	API_KEY= "abcdefghij"
 	API_SECRET="abc123def456g7h8ij9k0lmn1op2qr2s"
 
