@@ -37,6 +37,10 @@ from urllib.parse import urlencode
 
 from bitso import (ApiError, ApiClientError, Ticker, OrderBook, Balances, Fees, Trade, UserTrade, Order, TransactionQuote, TransactionOrder, LedgerEntry, FundingDestination, Withdrawal, Funding, AvailableBooks, AccountStatus, AccountRequiredField)
 
+try:
+    basestring
+except NameError:
+    basestring = str
 
 def current_milli_time():
     nonce =  str(int(round(time.time() * 1000000)))
