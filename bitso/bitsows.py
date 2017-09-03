@@ -25,7 +25,7 @@
 
 import json
 import websocket
-from models import StreamUpdate
+from .models import StreamUpdate
 
 
 class Listener(object):
