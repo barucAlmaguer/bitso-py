@@ -8,3 +8,6 @@ MANIFEST
 coverage.xml
 nosetests.xml
 #*#
+
+#baruc
+bitso_py.egg-info/
