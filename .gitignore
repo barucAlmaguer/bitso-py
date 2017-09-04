@@ -12,3 +12,4 @@ nosetests.xml
 #baruc
 bitso_py.egg-info/
 btc_apikeys.py
+.ipynb_checkpoints/
