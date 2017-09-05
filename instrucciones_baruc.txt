@@ -13,4 +13,4 @@
 
 5.	Incluir API_KEY y API_SECRET en las llamadas a bitso.Api(API_KEY, API_SECRET) correspondientes
 
-6. 	have fun
+6. 	have bitcoins
